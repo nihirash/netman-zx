@@ -8,7 +8,10 @@ origin = #8000
     include "modules/ui.asm"
     include "modules/uart-common.asm"
     include "modules/keyboard.asm"
+
+    ifdef ESXCOMPAT
     include "modules/compat.asm"
+    endif
     
     ifdef UNO
     include "drivers/zxuno.asm"
@@ -26,4 +29,8 @@ start:
     call UI.renderList
     jp   UI.uiLoop
 buffer equ $
+    ifndef HOB
     save3dos "netman.cod", origin, $ - origin
+    else
+    savehob "netman.$c", "netman.C", origin, $ - origin
+    endif

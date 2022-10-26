@@ -326,4 +326,5 @@ secondByteFinished:
 
 _baud dw 11 ; 54 - 2400 --- 25 - 4800 --- 11 - 9600
 _isSecondByteAvail dw #0
+                   dw #0
     endmodule

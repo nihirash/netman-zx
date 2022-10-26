@@ -3,10 +3,13 @@ BINARY=netman.cod
 VERSION=$(shell cat version.def)
 
 ay:
-		sjasmplus main.asm -DAY -DV=$(VERSION)
+		sjasmplus main.asm -DAY -DESXCOMPAT -DV=$(VERSION)
 
 zxuno:
-		sjasmplus main.asm -DUNO -DV=$(VERSION)
+		sjasmplus main.asm -DUNO -DESXCOMPAT -DV=$(VERSION)
+
+karabas-pro:
+		sjasmplus main.asm -DUNO -DHOB -DV=$(VERSION)
 
 clean:
-		rm $(BINARY) *.sld
+		rm -f $(BINARY) *.sld netman.?c

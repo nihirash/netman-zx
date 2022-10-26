@@ -1,4 +1,7 @@
 *.tap
 *.sna
 .tmp/
+release/
 *.sld
+*.cod
+*.$c
