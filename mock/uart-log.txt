@@ -1,0 +1,50 @@
+
+OK
++++
+
+AT+RST
+
+OK
+
+Ai-Thinker Technology Co. Ltd.
+
+ready
+WIFI DISCONNECT
+WIFI CONNECTED
+WIFI GOT IP
+
+
+ATE0
+
+OK
+
+OK
+
+OK
+WIFI DISCONNECT
+
++CWLAP: (4,"7-1",-83,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"8-1",-43,"c0:21:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"9-1",-87,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"5-1",-90,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"7-2",-83,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"Ap Name",-83,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"BangBang",-87,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"Piu-piu",-90,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"BlamBalm",-83,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"OtherAp",-83,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"Test123",-87,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"Siemens",-90,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"iPhone",-83,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"Some other",-83,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"Test456",-87,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"Siem",-90,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"iPhosssne",-83,"c0:25:2f:9b:dc:f2",2-7,0)
++CWLAP: (4,"Someher",-83,"c0:25:2f:9b:dc:f2",2-7,0)
+
+OK
+
+WIFI CONNECTED
+WIFI GOT IP
+
+OK

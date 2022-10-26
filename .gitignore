@@ -1,0 +1,4 @@
+*.tap
+*.sna
+.tmp/
+*.sld
