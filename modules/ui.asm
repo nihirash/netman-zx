@@ -174,7 +174,7 @@ selectItem:
 
     jr $
 .done      db "All done!", 13, 13, "Now you can use network apps!",13, 0
-.at_start  db 'AT+CWJAP="',0
+.at_start  db 'AT+CWJAP_DEF="',0
 .at_middle db '","', 0
 
 .ssid db "Selected SSID:", 0
