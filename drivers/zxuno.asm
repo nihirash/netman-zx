@@ -10,12 +10,25 @@ init:
     ld bc, ZXUNO_REG : in A, (c)
     ld bc, ZXUNO_ADDR : ld a, UART_DATA_REG : out (c), a
     ld bc, ZXUNO_REG : in A, (c)
-    ld b, #ff
-.loop
+
+    ei 
+    ld b,50
+1
     push bc
     call uartRead
     pop bc
-    djnz .loop
+    halt
+    djnz 1b
+
+    ld bc, #ffff
+.loop
+    push bc
+    call uartRead
+    call c, Display.putLogC
+    pop bc
+    dec bc 
+    ld a,b : or c
+    jr z, .loop
 
     ld hl, set_speed_cmd
 .speedCmd

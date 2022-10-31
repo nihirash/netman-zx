@@ -2,7 +2,6 @@
     device zxspectrum128
     SLDOPT COMMENT WPMEM, LOGPOINT, ASSERTION
     define V 20
-    define ESXCOMPAT 1
 stack_top:
     include "modules/version.asm"
     include "modules/display.asm"

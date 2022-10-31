@@ -37,6 +37,8 @@ init:
     EspCmdOkErr "ATE0"
     EspCmdOkErr "AT+CWMODE_DEF=1"
     jr c, .err
+    EspCmdOkErr "AT+CWAUTOCONN=1"
+    jr c, .err
     EspCmdOkErr "AT+CWQAP"
     jr c, .err
     ret
@@ -47,6 +49,7 @@ init:
 .err_msg db 13, "ESP error! Halted!", 0
 
 reset:
+    EspCmdOkErr "AT"
     EspCmd "AT+RST"
 .loop
     call Uart.read

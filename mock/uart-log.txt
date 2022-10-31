@@ -21,6 +21,8 @@ OK
 OK
 
 OK
+
+OK
 WIFI DISCONNECT
 
 +CWLAP: (4,"7-1",-83,"c0:25:2f:9b:dc:f2",2-7,0)
