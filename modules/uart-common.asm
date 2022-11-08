@@ -1,6 +1,7 @@
     module Uart
 init:
     ld hl, .msg : call Display.putStrLog
+    call UartImpl.init
     ret
 .msg db "Preparing UART and setting port speed", 13,13,0
 

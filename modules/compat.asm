@@ -30,6 +30,7 @@ iwConfig:
     db ESX_GETSETDRV
 
     ld ix,.filename
+    ld hl,.filename
     ld b, FMODE_CREATE
     rst #8 
     db ESX_FOPEN
