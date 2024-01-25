@@ -155,7 +155,13 @@ selectItem:
     gotoXY 1,6 : printMsg .pass_buffer : ld a, ' ' : call Display.putC : ld a,' ' : call Display.putC
     
 
-    ld hl, .at_start : call Wifi.espSendZ
+    ld a, (Wifi.old_fw)
+    ld hl, .at_start
+    or a
+    jr z, 1f
+    ld hl, .at_start_old
+1
+    call Wifi.espSendZ
     ld a, (cursor_position) : ld hl, offset : add (hl) : ld d, a : call findRow ;; HL = SSID NAME
     call Wifi.espSendZ
     ld hl, .at_middle   : call Wifi.espSendZ
@@ -173,9 +179,10 @@ selectItem:
     printMsg .done
 
     jr $
-.done      db "All done!", 13, 13, "Now you can use network apps!",13, 0
-.at_start  db 'AT+CWJAP_DEF="',0
-.at_middle db '","', 0
+.done           db "All done!", 13, 13, "Now you can use network apps!",13, 0
+.at_start       db 'AT+CWJAP="',0
+.at_start_old   db 'AT+CWJAP_DEF="',0
+.at_middle      db '","', 0
 
 .ssid db "Selected SSID:", 0
 .pass db "Enter password for SSID:", 0
