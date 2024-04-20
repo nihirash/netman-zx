@@ -35,7 +35,18 @@ init:
     call reset
 
     EspCmdOkErr "ATE0"
+    EspCmdOkErr "AT+SYSSTORE=1"
+    ; if it failed, it's older version of firmware
+    jr c, .old_fw
+    EspCmdOkErr "AT+CWMODE=1"
+    jr 1f
+
+.old_fw
+    ld a, 1
+    ld (old_fw), a
     EspCmdOkErr "AT+CWMODE_DEF=1"
+
+1
     jr c, .err
     EspCmdOkErr "AT+CWAUTOCONN=1"
     jr c, .err
@@ -98,6 +109,7 @@ loadList:
 .buff_ptr dw buffer
 
 networks_count  db 0
+old_fw          db 0
 
 ; Send buffer to UART
 ; HL - buff
