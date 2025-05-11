@@ -8,6 +8,9 @@ ay:
 zxuno:
 		sjasmplus main.asm -DUNO -DESXCOMPAT -DV=$(VERSION)
 
+next:
+		sjasmplus main.asm -DNEXT -DESXCOMPAT -DV=$(VERSION)
+
 karabas-pro:
 		sjasmplus main.asm -DUNO -DHOB -DV=$(VERSION)
 

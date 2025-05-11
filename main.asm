@@ -12,13 +12,17 @@ origin = #8000
     ifdef ESXCOMPAT
     include "modules/compat.asm"
     endif
-    
+
     ifdef UNO
     include "drivers/zxuno.asm"
     endif
 
     ifdef AY
     include "drivers/ay.asm"
+    endif
+
+    ifdef NEXT
+    include "drivers/next.asm"
     endif
 
 start:

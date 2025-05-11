@@ -112,15 +112,16 @@ findRow:
 selectItem:
     call hideCursor
     call topClean
-    gotoXY 0,2 : printMsg .ssid
+    gotoXY 0,2 : ld hl, .ssid : call Display.putStr ; printMsg .ssid
     gotoXY 1,3
     ld a, (cursor_position) : ld hl, offset : add (hl) : ld d, a : call findRow ;; HL = SSID NAME
     call Display.putStr
 
-    gotoXY 0,5 : printMsg .pass
+    gotoXY 0,5 : ld hl, .pass : call Display.putStr ; printMsg .pass
     setLineColor 3, 071o : setLineColor 6, 171o
 .readPass
-    gotoXY 1,6 : printMsg .pass_buffer : ld a, 219 : call Display.putC : ld a,' ' : call Display.putC
+    gotoXY 1,6 : ld hl, .pass_buffer : call Display.putStr ; printMsg .pass_buffer
+    ld a, 219 : call Display.putC : ld a,' ' : call Display.putC
     
     ld b, 10
 .waitLoop
@@ -152,7 +153,8 @@ selectItem:
     dec hl : dec hl : ld (hl), a 
     jr .readPass
 .connect
-    gotoXY 1,6 : printMsg .pass_buffer : ld a, ' ' : call Display.putC : ld a,' ' : call Display.putC
+    gotoXY 1,6 : ld hl, .pass_buffer : call Display.putStr ; printMsg .pass_buffer
+    ld a, ' ' : call Display.putC : ld a,' ' : call Display.putC
     
 
     ld a, (Wifi.old_fw)
@@ -176,7 +178,7 @@ selectItem:
     call topClean
     setLineColor 3, 107o : setLineColor 6, 107o
     gotoXY 0, 2
-    printMsg .done
+    ld hl, .done : call Display.putStr ; printMsg .done
 
     jr $
 .done           db "All done!", 13, 13, "Now you can use network apps!",13, 0
