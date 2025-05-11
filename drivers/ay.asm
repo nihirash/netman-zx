@@ -70,6 +70,7 @@ setSpeed:
 
 
 write:
+    di
     push hl, de, bc
     push af
     ld c, #fd ; prepare port addresses
